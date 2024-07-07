@@ -1,16 +1,18 @@
-import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { ShopContext } from '../context/shopContext';
-import { FaRegArrowAltCircleLeft } from 'react-icons/fa';
-import Review2 from '../component/Review2';
+import React, { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
+import { ShopContext } from "../context/shopContext";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import Review2 from "../component/Review2";
 
 const ProductDescription = () => {
   const { id } = useParams();
   const { all_product } = useContext(ShopContext);
-  const product = all_product ? all_product.find((item) => item.id === parseInt(id)) : null;
+  const product = all_product
+    ? all_product.find((item) => item.id === parseInt(id))
+    : null;
 
   const [selectedSize, setSelectedSize] = useState(1);
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState("");
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
@@ -25,26 +27,42 @@ const ProductDescription = () => {
   }
 
   return (
-    <div className='mx-32 my-10'>
-        <div className='mb-10'>
-        <a href="/" className="flex items-center text-gray-500 hover:text-gray-700">
-            <FaRegArrowAltCircleLeft className="mr-2" />
-          </a>
+    <div className="mx-10 md:mx-20 lg:mx-32 my-10">
+      <div className="mb-16">
+        <a
+          href="/"
+          className="flex items-center text-gray-500 hover:text-gray-700"
+        >
+          <FaRegArrowAltCircleLeft className="mr-2" />
+        </a>
+      </div>
+      <div className="flex flex-col md:flex-row lg:flex-row gap-8 md:gap-16 lg:gap-32 items-center">
+        <div className="bg-gray-100 h-72 w-72 flex justify-center items-center md:block">
+          <img
+            src={product.image}
+            alt={product.name}
+            className=" w-60 h-60 lg:w-72 lg:h-72"
+          />
         </div>
-      <div className='flex gap-32 items-center'>
-        <div className=" bg-gray-100 h-72 w-72 flex justify-center items-center">
-          <img src={product.image} alt={product.name} className="" />
-        </div>
-        <div className=" w-96 text-left">
+        <div className="w-full lg:w-96 text-left">
           <h1 className="text-2xl font-bold mt-4">{product.name}</h1>
-          <p>The square Versace flats is a cool and professional footwear for every female fashionista. It is perfect for showing your inner IT girl.</p>
+          <p>
+            The square Versace flats is a cool and professional footwear for
+            every female fashionista. It is perfect for showing your inner IT
+            girl.
+          </p>
           <div className="mt-3 flex gap-8 items-center">
-            <label htmlFor="size" className="block text-sm font-semibold text-gray-700">Size:</label>
+            <label
+              htmlFor="size"
+              className="block text-sm font-semibold text-gray-700"
+            >
+              Size:
+            </label>
             <select
               id="size"
               value={selectedSize}
               onChange={handleSizeChange}
-              className="mt-1 block  pl-3 pr-10 py-2 text-base shadow bg-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block pl-3 pr-10 py-2 text-base shadow bg-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
               {[...Array(50).keys()].map((size) => (
                 <option key={size + 1} value={size + 1}>
@@ -54,19 +72,27 @@ const ProductDescription = () => {
             </select>
           </div>
           <div className="mt-4 flex gap-8 items-center">
-            <label className="block text-sm font-semibold text-gray-700">Color:</label>
+            <label className="block text-sm font-semibold text-gray-700">
+              Color:
+            </label>
             <div className="flex space-x-2 mt-2">
-              {['Red', 'Black', 'Gray', 'Brown'].map((color) => (
+              {["Red", "Black", "Gray", "Brown"].map((color) => (
                 <button
                   key={color}
                   onClick={() => handleColorChange(color)}
-                  className={`w-6 h-6 rounded-full ${selectedColor === color ? 'ring-2 ring-offset-2 ring-indigo-500' : ''}`}
+                  className={`w-6 h-6 rounded-full ${
+                    selectedColor === color
+                      ? "ring-2 ring-offset-2 ring-indigo-500"
+                      : ""
+                  }`}
                   style={{ backgroundColor: color.toLowerCase() }}
                 />
               ))}
             </div>
           </div>
-          <p className="mt-2 font-semibold text-sm">Price: ${product.price}</p>
+          <p className="mt-2 font-semibold text-sm">
+            <span className="mr-7">Price:</span> ${product.price}
+          </p>
           <button className="mt-4 px-4 py-2 bg-purple-700 text-white rounded focus:outline-none hover:bg-purple-800">
             ADD TO CART
           </button>
