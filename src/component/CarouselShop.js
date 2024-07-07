@@ -26,7 +26,7 @@ function CarouselShop() {
       
   return (
     <div className='mx-32 my-16'>
-        <h2 className='bg-purple-500 text-md text-left p-2 text-black font-semibold mb-10'>Shop Best Sellers</h2>
+        <h2 className='bg-purple-400 text-md text-left p-2 text-black font-semibold mb-10'>Shop Best Sellers</h2>
         <Carousel responsive={responsive}>
             {
                 all_product.map((product)=>{
