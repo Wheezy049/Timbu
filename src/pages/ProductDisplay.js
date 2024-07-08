@@ -41,7 +41,7 @@ const ProductDescription = () => {
           <img
             src={product.image}
             alt={product.name}
-            className=" w-60 h-60 lg:w-72 lg:h-72"
+            className=" w-60 h-60 lg:w-72 lg:h-72 object-cover"
           />
         </div>
         <div className="w-full lg:w-96 text-left">
@@ -62,7 +62,7 @@ const ProductDescription = () => {
               id="size"
               value={selectedSize}
               onChange={handleSizeChange}
-              className="mt-1 block pl-3 pr-10 py-2 text-base shadow bg-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block pl-3 pr-7 py-2 text-base shadow bg-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
               {[...Array(50).keys()].map((size) => (
                 <option key={size + 1} value={size + 1}>

@@ -9,7 +9,7 @@ import image7 from "./assest/image7.png";
 
 function Hero() {
   return (
-    <div className="flex flex-col justify-center items-center mt-16 mb-0 md:mb-60 md:mt-60">
+    <div className="flex flex-col justify-center items-center mt-16 mb-16 md:mb-60 md:mt-60">
       <div className="relative w-80 md:w-96 h-80 md:h-96 flex justify-center items-center">
         <div className="absolute text-center mx-10">
           <h1 className="text-2xl font-semibold w-64 mx-auto">
