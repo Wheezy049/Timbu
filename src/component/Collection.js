@@ -7,14 +7,14 @@ function Collection() {
 
   return (
     <div className="lg:mx-32 md:mx-20 mx-10 mt-10">
-      <p className="bg-purple-700 text-md text-left p-2 text-black font-semibold">
+      <p className="bg-purple-300 text-md text-left p-2 text-black font-semibold">
         Featured Collections
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
         {all_product ? (
           all_product.map((item) => (
             <div key={item.id}>
-              <div className="bg-white shadow p-6 text-left text-sm font-bold">
+              <div className="bg-white shadow p-6 text-left text-sm font-semibold">
                 <Link to={`/product/${item.id}`}>
                   <img
                     src={item.image}

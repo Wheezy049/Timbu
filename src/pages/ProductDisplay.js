@@ -93,7 +93,7 @@ const ProductDescription = () => {
           <p className="mt-2 font-semibold text-sm">
             <span className="mr-7">Price:</span> ${product.price}
           </p>
-          <button className="mt-4 px-4 py-2 bg-purple-700 text-white rounded focus:outline-none hover:bg-purple-800">
+          <button className="mt-4 px-4 py-2 bg-purple-700 text-white rounded cursor-pointer focus:outline-none hover:bg-purple-800">
             ADD TO CART
           </button>
         </div>

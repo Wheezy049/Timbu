@@ -15,9 +15,8 @@ function NavBar() {
             </ul>
         </div> */}
         <div className='flex items-center gap-2'>
-            <p className=' hidden md:block text-xl font-bold'>Cart</p>
-            <FaCartArrowDown style={{height: '20px', width: '20px'}} />
-            <div className=' block md:hidden'><FaBars /></div>
+            <p className=' hidden md:block text-xl font-semibold'>Cart</p>
+            <FaCartArrowDown style={{height: '20px', width: '20px', cursor: 'pointer'}} />
         </div>
     </div>
   )

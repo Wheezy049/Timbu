@@ -26,14 +26,14 @@ function CarouselShop() {
 
   return (
     <div className=" hidden md:block md:mx-20 lg:mx-32 my-16">
-      <h2 className="bg-purple-700 text-md text-left p-2 text-black font-semibold mb-10">
+      <h2 className="bg-purple-300 text-md text-left p-2 text-black font-semibold mb-10">
         Shop Best Sellers
       </h2>
       <div className="">
         <Carousel responsive={responsive} className="">
           {all_product.map((product) => {
             return (
-              <div className=" bg-white shadow p-6 text-left text-sm font-bold w-52 h-52">
+              <div className=" bg-white shadow p-6 text-left text-sm font-semibold w-52 h-52">
                 <img src={product.image} alt="shoe" />
                 <p className="mt-4">{product.name}</p>
                 <p>${product.price}</p>

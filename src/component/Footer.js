@@ -9,17 +9,17 @@ function Footer() {
           <h2 className='font-bold text-base pb-2'>TIMBUS'S STORE</h2>
           <p className='text-sm'>Step into Style with Every Step You Take.</p>
           <div className='flex gap-3 md:gap-5 mt-3 text-black'>
-            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaFacebook style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaInstagram style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaTwitter style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaTiktok style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaFacebook style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaInstagram style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaTwitter style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaTiktok style={{ width: '14px', height: '14px' }} /></div>
           </div>
         </div>
         <div className='text-white text-left'>
           <h2 className='font-bold text-base'>Subscribe to our newsletter</h2>
           <div className='flex gap-0 sm:w-52  md:w-72 mt-3 bg-none border border-solid rounded'>
-            <input type='email' placeholder='your email' className='bg-black border-none outline-none flex-1 p-2' />
-            <button className='bg-purple-500 text-xs md:text-base border-l border-l-white p-1 md:p-2'>Subscribe</button>
+            <input type='email' placeholder='your email' className='bg-black border-none  ml-1 md:ml-2 outline-none flex-1 p-2' />
+            <button className='bg-purple-700  hover:border-b-purple-800 cursor-pointer text-xs md:text-sm border-l rounded border-l-white p-1 md:p-2'>Subscribe</button>
           </div>
         </div>
       </div>

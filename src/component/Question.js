@@ -3,8 +3,8 @@ import { FaChevronDown } from "react-icons/fa";
 
 function Question() {
   return (
-    <div className="mx-10 md:mx-20 lg:mx-32 my-15">
-      <h2 className="font-bold text-xl md:text-2xl flex justify-center text-black mb-10">
+    <div className="mx-10 md:mx-20 lg:mx-32 my-20">
+      <h2 className="font-semibold text-xl md:text-2xl flex justify-center text-black mb-10">
         Frequently Asked Questions
       </h2>
       <div className=" flex justify-between items-center mt-5 mb-5 text-sm">
