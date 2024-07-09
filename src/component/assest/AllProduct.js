@@ -2,14 +2,14 @@ import image14 from "./image14.png";
 import image15 from "./image15.png";
 import image16 from "./image16.png";
 import image17 from "./image17.png";
-import image19 from "./image19.png";
+import image9 from "./image9.png";
 import image20 from "./image20.png";
 import image21 from "./image21.png";
-import image22 from "./image22.png";
+import image5 from "./image5.png";
 import image23 from "./image23.png";
 import image24 from "./image24.png";
 import image25 from "./image25.png";
-import image26 from "./image26.png";
+import image10 from "./image10.png";
 import image27 from "./image27.png";
 import image28 from "./image28.png";
 import image29 from "./image29.png";
@@ -34,8 +34,8 @@ let all_product = [
   },
   {
     id: 19,
-    name: "White and Red Sneakers",
-    image: image19,
+    name: "Brown Shoe",
+    image: image9,
     price: 27000,
   },
   {
@@ -53,7 +53,7 @@ let all_product = [
   {
     id: 22,
     name: "Girls Heels",
-    image: image22,
+    image: image5,
     price: 13800,
   },
   {
@@ -76,8 +76,8 @@ let all_product = [
   },
   {
     id: 26,
-    name: "MiuMiu Heels",
-    image: image26,
+    name: "MiuMiu Sneakers",
+    image: image10,
     price: 6000,
   },
   {
