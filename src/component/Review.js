@@ -9,7 +9,7 @@ function Review() {
       </h2>
       <div className="flex flex-col sm:flex-row justify-between gap-3 mt-8">
         <div className="bg-white shadow p-4 rounded text-center w-full sm:w-48 md:w-60 lg:w-80">
-          <p className="text-sm lg:text-xl">
+          <p className="text-sm lg:text-base">
             "Best purchase ever! My feet have never felt better. The quality is
             top-notch, and the design is sleek and modern. Will definitely buy
             again."
@@ -24,7 +24,7 @@ function Review() {
           </div>
         </div>
         <div className="bg-white shadow p-4 rounded text-center w-full sm:w-48 md:w-60 lg:w-80">
-          <p className="text-sm lg:text-xl">
+          <p className="text-sm lg:text-base">
             "These shoes are a game-changer! Stylish and incredibly comfortable.
             I wore them all day without any discomfort. Highly recommend!"
           </p>
@@ -38,7 +38,7 @@ function Review() {
           </div>
         </div>
         <div className="bg-white shadow p-4 rounded text-center w-full sm:w-48 md:w-60 lg:w-80">
-          <p className="text-sm lg:text-xl">
+          <p className="text-sm lg:text-base">
             "Fantastic customer service and fast shipping. The sneakers are
             exactly as described. I’ve received so many compliments on them."
           </p>
