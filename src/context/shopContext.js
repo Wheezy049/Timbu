@@ -11,9 +11,9 @@ const getDefaultCart = () => {
 };
 
 const ShopContextProvider = (props) => {
-  const [cartItem, setCartItem] = useState(getDefaultCart)
-   
-    useEffect(() => {
+  const [cartItem, setCartItem] = useState(getDefaultCart);
+
+  useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       setCartItem(JSON.parse(storedCart));
@@ -23,7 +23,6 @@ const ShopContextProvider = (props) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItem));
   }, [cartItem]);
-
 
   const addToCart = (itemId) => {
     setCartItem((prev) => {
@@ -40,8 +39,7 @@ const ShopContextProvider = (props) => {
       ...prevItems,
       [itemId]: 0,
     }));
-  };  
-
+  };
 
   const increment = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -55,7 +53,15 @@ const ShopContextProvider = (props) => {
     setCartItem(getDefaultCart());
   };
 
-  const contextValue = { all_product, addToCart, cartItem, removeAllItems, increment, decrement, removeFromCart };
+  const contextValue = {
+    all_product,
+    addToCart,
+    cartItem,
+    removeAllItems,
+    increment,
+    decrement,
+    removeFromCart,
+  };
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}

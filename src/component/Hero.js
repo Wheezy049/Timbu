@@ -19,8 +19,10 @@ function Hero() {
             Our diverse range of shoes is designed to make you feel your best,
             no matter where you're headed.
           </p>
-          <button className="mt-4 px-4 py-2 bg-purple-700 text-sm text-white rounded hover:bg-purple-600">
-            SHOP NOW
+          <button
+            className="mt-4 px-4 cursor-pointer py-2 bg-purple-700 text-sm text-white rounded hover:bg-purple-600"
+          >
+            <a href="#collection">SHOP NOW</a>
           </button>
         </div>
         <div className="absolute w-80 md:w-96 h-80 md:h-96 rotate-clockwise hidden sm:flex flex-wrap justify-center items-center">

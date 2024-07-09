@@ -6,7 +6,7 @@ function Collection() {
   const { all_product } = useContext(ShopContext);
 
   return (
-    <div className="lg:mx-32 md:mx-20 mx-10 mt-10">
+    <div id="collection" className="lg:mx-32 md:mx-20 mx-10 mt-10">
       <p className="bg-purple-300 text-md text-left p-2 text-black font-semibold">
         Featured Collections
       </p>

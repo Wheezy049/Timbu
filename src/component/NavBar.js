@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <div className=' my-10 mx-10 md:mx-16 lg:mx-24 flex justify-between items-center'>
         <div className='bg-white p-2 rounded shadow'>
-           <Link to='/'> <p className='p-1 md:p-2 text-xs  md:text-xl font-semibold'>TIMBU`S STORE</p> </Link>
+           <Link to='/'> <p className='p-1 md:p-2 text-sm  md:text-xl font-semibold'>TIMBU`S STORE</p> </Link>
         </div>
         <div className='flex items-center gap-2'>
             <p className=' hidden md:block text-xl font-semibold'>Cart({totalUniqueItems})</p>
