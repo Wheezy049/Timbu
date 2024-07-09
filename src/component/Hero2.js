@@ -19,7 +19,7 @@ function Hero2() {
               className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
             />
             <h3 className="text-base font-semibold">INNOVATIVE DESIGNS</h3>
-            <p className="text-xs">
+            <p className="text-sm font-medium text-gray-400">
               Stay ahead of the fashion curve with our cutting-edge designs.
             </p>
           </div>
@@ -32,7 +32,7 @@ function Hero2() {
             <h3 className="text-base font-semibold">
               CUSTOMER LOYALTY DISCOUNTS
             </h3>
-            <p className="text-xs">
+            <p className="text-sm font-medium text-gray-400">
               Enjoy exclusive rewards, discounts, and early access to new
               collections.
             </p>
@@ -49,7 +49,7 @@ function Hero2() {
               className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
             />
             <h3 className="text-base font-semibold">QUALITY CRAFTSMANSHIP</h3>
-            <p className="text-xs">
+            <p className="text-sm font-medium text-gray-400">
               Our shoes are of high-quality to ensure durability and style
             </p>
           </div>
@@ -60,7 +60,7 @@ function Hero2() {
               className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
             />
             <h3 className="text-base font-semibold">EXCEPTIONAL SERVICE</h3>
-            <p className="text-xs">
+            <p className="text-sm font-medium text-gray-400">
               Enjoy free shipping, easy returns, and dedicated customer support.
             </p>
           </div>

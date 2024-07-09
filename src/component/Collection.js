@@ -15,6 +15,7 @@ function Collection() {
           all_product.map((item) => (
             <div key={item.id}>
               <div className="bg-white shadow p-6 text-left text-sm font-semibold">
+                <div className="flex justify-center m-auto items-center">
                 <Link to={`/product/${item.id}`}>
                   <img
                     src={item.image}
@@ -22,6 +23,7 @@ function Collection() {
                     className="h-40 w-40 cursor-pointer object-cover"
                   />
                 </Link>
+                </div>
                 <p className="mt-4">{item.name}</p>
                 <p>${item.price}</p>
               </div>

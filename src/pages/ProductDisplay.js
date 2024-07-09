@@ -1,18 +1,26 @@
-import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../context/shopContext";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import Review2 from "../component/Review2";
 
 const ProductDescription = () => {
   const { id } = useParams();
-  const { all_product } = useContext(ShopContext);
+  const { all_product, addToCart } = useContext(ShopContext);
+  const navigate = useNavigate()
+
   const product = all_product
     ? all_product.find((item) => item.id === parseInt(id))
     : null;
 
   const [selectedSize, setSelectedSize] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product.id);
+    }
+  };
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
@@ -22,6 +30,10 @@ const ProductDescription = () => {
     setSelectedColor(color);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -29,19 +41,19 @@ const ProductDescription = () => {
   return (
     <div className="mx-10 md:mx-20 lg:mx-32 my-10">
       <div className="mb-16">
-        <a
-          href="/"
+        <button
+          onClick={()=> navigate(-1)}
           className="flex items-center text-gray-500 hover:text-gray-700"
         >
-          <FaRegArrowAltCircleLeft className="mr-2" />
-        </a>
+          <FaRegArrowAltCircleLeft className="mr-2 w-5 h-5" />
+        </button>
       </div>
       <div className="flex flex-col md:flex-row lg:flex-row gap-8 md:gap-16 lg:gap-32 items-center">
         <div className="bg-gray-100 h-72 w-72 flex justify-center items-center md:block">
           <img
             src={product.image}
             alt={product.name}
-            className=" w-60 h-60 lg:w-72 lg:h-72 object-cover"
+            className="w-60 h-60 lg:w-72 lg:h-72 object-cover"
           />
         </div>
         <div className="w-full lg:w-96 text-left">
@@ -93,7 +105,10 @@ const ProductDescription = () => {
           <p className="mt-2 font-semibold text-sm">
             <span className="mr-7">Price:</span> ${product.price}
           </p>
-          <button className="mt-4 px-4 py-2 bg-purple-700 text-white rounded cursor-pointer focus:outline-none hover:bg-purple-800">
+          <button
+            onClick={handleAddToCart}
+            className="mt-4 px-4 py-2 bg-purple-700 text-white rounded cursor-pointer focus:outline-none hover:bg-purple-800"
+          >
             ADD TO CART
           </button>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import all_product from "./assest/AllProduct";
+import { Link } from "react-router-dom";
 
 function CarouselShop() {
   const responsive = {
@@ -34,7 +35,7 @@ function CarouselShop() {
           {all_product.map((product) => {
             return (
               <div className=" bg-white shadow p-6 text-left text-sm font-semibold w-52 h-52">
-                <img src={product.image} alt="shoe" />
+                <Link to={`/product/${product.id}`}><img src={product.image} alt="shoe" /></Link>
                 <p className="mt-4">{product.name}</p>
                 <p>${product.price}</p>
               </div>
