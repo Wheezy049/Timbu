@@ -39,9 +39,6 @@
   .shoe:nth-child(7) { transform: rotate(308.58deg) translate(180px) rotate(-308.58deg); }
 }
 
-#icon{
-  color: purple;
-}
 
 .App {
   text-align: center;

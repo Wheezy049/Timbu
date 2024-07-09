@@ -9,10 +9,10 @@ function Footer() {
           <h2 className='font-bold text-base pb-2'>TIMBUS'S STORE</h2>
           <p className='text-xs'>Step into Style with Every Step You Take.</p>
           <div className='flex gap-3 md:gap-5 mt-3 text-black'>
-            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaFacebook style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaInstagram style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaTwitter style={{ width: '14px', height: '14px' }} /></div>
-            <div className='bg-purple-700 w-6 h-6 flex justify-center items-center'><FaTiktok style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaFacebook style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaInstagram style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaTwitter style={{ width: '14px', height: '14px' }} /></div>
+            <div className='bg-purple-500 w-6 h-6 flex justify-center items-center'><FaTiktok style={{ width: '14px', height: '14px' }} /></div>
           </div>
         </div>
         <div className='text-white text-left'>
