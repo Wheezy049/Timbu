@@ -1,5 +1,8 @@
 import React from "react";
-import icon1 from "./assest/icon1.png";
+import icon11 from "./assest/icon11.svg";
+import icon12 from "./assest/icon12.svg";
+import icon10 from "./assest/icon10.svg";
+import icon13 from "./assest/icon13.svg";
 import image22 from "./assest/image22.png";
 
 function Hero2() {
@@ -13,8 +16,8 @@ function Hero2() {
         <div>
           <div className="m-10 md:mx-0 mt-0 md:mb-16 lg:mb-24">
             <img
-              src={icon1}
-              alt="icon1"
+              src={icon12}
+              alt="icon12"
               id="icon"
               className="w-5 h-5 flex justify-center m-auto mb-2"
             />
@@ -25,8 +28,8 @@ function Hero2() {
           </div>
           <div className="m-10 md:mx-0 mb-0">
             <img
-              src={icon1}
-              alt="icon1"
+              src={icon11}
+              alt="icon11"
               className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
             />
             <h3 className="text-base font-semibold">
@@ -44,9 +47,9 @@ function Hero2() {
         <div>
           <div className="m-10 mt-0 sm:mt-0 md:mt-10 md:mx-0 md:mb-16 lg:mb-24">
             <img
-              src={icon1}
-              alt="icon1"
-              className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
+              src={icon13}
+              alt="icon13"
+              className="w-5 h-5 flex justify-center m-auto mb-2 "
             />
             <h3 className="text-base font-semibold">QUALITY CRAFTSMANSHIP</h3>
             <p className="text-sm font-medium text-gray-400">
@@ -55,9 +58,9 @@ function Hero2() {
           </div>
           <div className="m-10 md:mx-0">
             <img
-              src={icon1}
-              alt="icon1"
-              className="w-5 h-5 flex justify-center m-auto mb-2 text-purple-700"
+              src={icon10}
+              alt="icon10"
+              className="w-7 h-7 flex justify-center m-auto mb-2"
             />
             <h3 className="text-base font-semibold">EXCEPTIONAL SERVICE</h3>
             <p className="text-sm font-medium text-gray-400">

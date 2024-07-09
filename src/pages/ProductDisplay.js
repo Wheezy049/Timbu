@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../context/shopContext";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import Review2 from "../component/Review2";
+// import icon14 from '../component/assest/icon14.jpg'
 
 const ProductDescription = () => {
   const { id } = useParams();
@@ -107,7 +108,7 @@ const ProductDescription = () => {
           </p>
           <button
             onClick={handleAddToCart}
-            className="mt-4 px-4 py-2 bg-purple-700 text-white rounded cursor-pointer focus:outline-none hover:bg-purple-800"
+            className="mt-4 px-4 py-2 flex gap-2 bg-purple-700 text-white rounded cursor-pointer focus:outline-none hover:bg-purple-800"
           >
             ADD TO CART
           </button>

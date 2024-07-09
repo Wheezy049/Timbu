@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-@keyframes rotate {
+/* @keyframes rotate {
   from {
       transform: rotate(0deg);
   }
@@ -13,7 +13,8 @@
 }
 .rotate-clockwise {
   animation: rotate 10s linear infinite;
-}
+} */
+
 .shoe {
   position: absolute;
   top: 40%;
