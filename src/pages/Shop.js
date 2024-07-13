@@ -10,7 +10,7 @@ function Shop() {
   return (
     <div>
       <Hero />
-      <CarouselShop />
+      {/* <CarouselShop /> */}
       <Hero2 />
       <Collection />
       <Review />

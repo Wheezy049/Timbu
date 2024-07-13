@@ -10,20 +10,20 @@ import Checkout from "./component/Checkout";
 
 function App() {
   return (
-      <ShopContextProvider>
-        <Router>
-    <div className="App">
-      <NavBar />
+    <ShopContextProvider>
+      <Router>
+        <div className="App">
+          <NavBar />
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/product/:id" element={<ProductDisplay />} />
             <Route path="/cart" element={<CartItem />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
-      <Footer />
-    </div>
-        </Router>
-      </ShopContextProvider>
+          <Footer />
+        </div>
+      </Router>
+    </ShopContextProvider>
   );
 }
 
