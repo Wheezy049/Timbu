@@ -111,7 +111,7 @@
 // export default ShopContextProvider;
 
 import React, { createContext, useEffect, useState } from "react";
-import all_product from "../component/assest/AllProduct";
+// import all_product from "../component/assest/AllProduct";
 
 export const ShopContext = createContext(null);
 
@@ -206,7 +206,7 @@ const ShopContextProvider = (props) => {
   };
 
   const contextValue = {
-    all_product,
+    product,
     addToCart,
     cartItem,
     removeAllItems,
