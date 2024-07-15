@@ -1,47 +1,52 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../context/shopContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import icon6 from "./assest/icon6.png";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 function CartItem() {
-  const [product, setProduct] = useState([]);
-  const [error, setError] = useState(null);
+  // const [id] = useParams()
+  // const [product, setProduct] = useState([]);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchProductDetails = async () => {
-      const url = `/api/products/`;
-      const params = new URLSearchParams({
-        organization_id: "c569c6cec7a4417fbe55088fa5c20077",
-        Appid: "VBPENXNU8XPGMM0",
-        Apikey: "620e806b56cf4065b016f1365d1659cb20240713043720400979"
-      });
+  // useEffect(() => {
+  //   const fetchProductDetails = async () => {
+  //     const url = `/api/products/`;
+  //     const params = new URLSearchParams({
+  //       organization_id: "c569c6cec7a4417fbe55088fa5c20077",
+  //       Appid: "VBPENXNU8XPGMM0",
+  //       Apikey: "620e806b56cf4065b016f1365d1659cb20240713043720400979"
+  //     });
 
-      try {
-        const response = await fetch(`${url}?${params.toString()}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Appid': 'VBPENXNU8XPGMM0',
-            'Apikey': '620e806b56cf4065b016f1365d1659cb20240713043720400979'
-          }
-        });
+  //     try {
+  //       const response = await fetch(`${url}?${params.toString()}`, {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           'Appid': 'VBPENXNU8XPGMM0',
+  //           'Apikey': '620e806b56cf4065b016f1365d1659cb20240713043720400979'
+  //         }
+  //       });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
 
-        const result = await response.json();
-        setProduct(result.items); // Assuming the response contains an 'items' array
-      } catch (error) {
-        setError(error.message);
-      }
-    };
+  //       const result = await response.json();
+  //       console.log("respone:", response)
+  //       console.log("Current price:", result.current_price);
+  //       setProduct(result.items); // Assuming the response contains an 'items' array
+  //     } catch (error) {
+  //       setError(error.message);
+  //     }
+  //   };
 
-    fetchProductDetails();
-  }, []);
+  //   fetchProductDetails();
+  // }, []);
 
   const {
+    error,
+    data,
     cartItem,
     removeAllItems,
     increment,
@@ -52,7 +57,7 @@ function CartItem() {
 
   const calculateTotal = () => {
     let newTotal = 0;
-    product.forEach((item) => {
+    data.forEach((item) => {
       const price = parseFloat(item.current_price && item.current_price[0]?.NGN[0] || 0);
       newTotal += (cartItem[item.id] || 0) * price;
     });
@@ -82,6 +87,8 @@ function CartItem() {
     (itemId) => cartItem[itemId] > 0
   ).length;
 
+  // const productImageUrl = product.photos 
+
   return (
     <div className="mx-4 md:mx-16 lg:mx-32 my-10 md:my-20">
       {error && <p className="text-red-500">{error}</p>}
@@ -103,16 +110,17 @@ function CartItem() {
             Object.keys(cartItem).map((itemId) => {
               const quantity = cartItem[itemId];
               if (quantity > 0) {
-                const item = product.find((productItem) => productItem.id === itemId);
+                const item = data.find((productItem) => productItem.id === itemId);
                 if (item) {  // Check if item exists
                   return (
                     <div className="" key={itemId}>
                       <div className="bg-white p-3 md:p-5 lg:p-7 border mb-5 md:mb-10">
                         <div className="flex md:flex-wrap gap-6 md:gap-10 items-center">
                           <div className="">
+                            {/* <img src={product.photo} alt={product.name} /> */}
                             {item.photos && item.photos.length > 0 ? (
                               <img
-                                src={item.photos[0].url}
+                                src={`https://api.timbu.cloud/images/${item.photos[0]?.url}`}
                                 alt={item.name}
                                 className="object-contain h-20 w-20 md:h-40 md:w-40"
                               />
@@ -181,7 +189,7 @@ function CartItem() {
               {Object.keys(cartItem).map((itemId) => {
                 const quantity = cartItem[itemId];
                 if (quantity > 0) {
-                  const item = product.find((productItem) => productItem.id === itemId);
+                  const item = data.find((productItem) => productItem.id === itemId);
                   if (item) {  // Check if item exists
                     return (
                       <div

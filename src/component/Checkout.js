@@ -6,27 +6,31 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "../context/shopContext";
 
 function Checkout() {
-  const { all_product, cartItem } = useContext(ShopContext);
+  const { data, cartItem } = useContext(ShopContext);
   const [total, setTotal] = useState(0);
+
   const calculateTotal = () => {
     let newTotal = 0;
-    all_product.forEach((item) => {
+    data.forEach((item) => {
       const price = parseFloat(item.price);
       newTotal += cartItem[item.id] * price;
     });
     setTotal(newTotal.toFixed(2));
   };
+
   useEffect(() => {
     calculateTotal();
   }, [cartItem]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="mx-10 md:mx-16 lg:mx-32 my-10 md:my-20">
       <h1 className="text-left text-xl font-semibold">Checkout</h1>
       <div className="block lg:flex gap-10">
-        <div className=" rounded border-2 border-gray-100 w-full p-5 lg:p-10">
+        <div className="rounded border-2 border-gray-100 w-full p-5 lg:p-10">
           <h1 className="text-left">Payment Details</h1>
           <form>
             <div>
@@ -130,9 +134,12 @@ function Checkout() {
           {Object.keys(cartItem).map((itemId) => {
             const quantity = cartItem[itemId];
             if (quantity > 0) {
-              const product = all_product.find(
+              const product = data.find(
                 (item) => item.id === Number(itemId)
               );
+              if (!product) {
+                return null;
+              }
               return (
                 <div
                   key={itemId}

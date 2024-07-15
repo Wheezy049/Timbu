@@ -6,50 +6,14 @@ import Review2 from "../component/Review2";
 
 const ProductDescription = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProductDetails = async () => {
-      const url = `/api/products/${id}`;
-      const params = new URLSearchParams({
-        organization_id: "c569c6cec7a4417fbe55088fa5c20077",
-        Appid: "VBPENXNU8XPGMM0",
-        Apikey: "620e806b56cf4065b016f1365d1659cb20240713043720400979"
-      });
-
-      try {
-        const response = await fetch(`${url}?${params.toString()}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Appid': 'VBPENXNU8XPGMM0',
-            'Apikey': '620e806b56cf4065b016f1365d1659cb20240713043720400979'
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setProduct(result);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProductDetails();
-  }, [id]);
-
-  const { addToCart } = useContext(ShopContext);
+  const { addToCart, data, error } = useContext(ShopContext);
   const navigate = useNavigate();
 
   const [selectedSize, setSelectedSize] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
+
+  // Find the specific product based on the id from params
+  const product = data.find((item) => item.id === id);
 
   const handleAddToCart = () => {
     if (product) {
@@ -69,10 +33,6 @@ const ProductDescription = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -82,7 +42,7 @@ const ProductDescription = () => {
   }
 
   const productImageUrl = product.photos && product.photos[0] ? product.photos[0].url : "";
-  const productPrice =product.current_price[0];
+  const productPrice = product.current_price && product.current_price[0] ? product.current_price[0].NGN[0] : "No price";
 
   return (
     <div className="mx-10 md:mx-20 lg:mx-32 my-10">
