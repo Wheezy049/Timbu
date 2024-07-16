@@ -58,7 +58,9 @@ function CartItem() {
   const calculateTotal = () => {
     let newTotal = 0;
     data.forEach((item) => {
-      const price = parseFloat(item.current_price && item.current_price[0]?.NGN[0] || 0);
+      const price = parseFloat(
+        (item.current_price && item.current_price[0]?.NGN[0]) || 0
+      );
       newTotal += (cartItem[item.id] || 0) * price;
     });
     setTotal(newTotal.toFixed(2));
@@ -87,7 +89,7 @@ function CartItem() {
     (itemId) => cartItem[itemId] > 0
   ).length;
 
-  // const productImageUrl = product.photos 
+  // const productImageUrl = product.photos
 
   return (
     <div className="mx-4 md:mx-16 lg:mx-32 my-10 md:my-20">
@@ -110,8 +112,11 @@ function CartItem() {
             Object.keys(cartItem).map((itemId) => {
               const quantity = cartItem[itemId];
               if (quantity > 0) {
-                const item = data.find((productItem) => productItem.id === itemId);
-                if (item) {  // Check if item exists
+                const item = data.find(
+                  (productItem) => productItem.id === itemId
+                );
+                if (item) {
+                  // Check if item exists
                   return (
                     <div className="" key={itemId}>
                       <div className="bg-white p-3 md:p-5 lg:p-7 border mb-5 md:mb-10">
@@ -155,11 +160,19 @@ function CartItem() {
                                   <FaPlus />
                                 </button>
                               </div>
-                              <p className="block md:hidden">${item.current_price && item.current_price[0]?.NGN[0]}</p>
+                              <p className="block md:hidden">
+                                $
+                                {item.current_price &&
+                                  item.current_price[0]?.NGN[0]}
+                              </p>
                             </div>
                           </div>
                           <div className="hidden md:block text-left">
-                            <p>${item.current_price && item.current_price[0]?.NGN[0]}</p>
+                            <p>
+                              $
+                              {item.current_price &&
+                                item.current_price[0]?.NGN[0]}
+                            </p>
                           </div>
                         </div>
                         <div className="flex justify-center md:justify-end mt-4">
@@ -189,8 +202,11 @@ function CartItem() {
               {Object.keys(cartItem).map((itemId) => {
                 const quantity = cartItem[itemId];
                 if (quantity > 0) {
-                  const item = data.find((productItem) => productItem.id === itemId);
-                  if (item) {  // Check if item exists
+                  const item = data.find(
+                    (productItem) => productItem.id === itemId
+                  );
+                  if (item) {
+                    // Check if item exists
                     return (
                       <div
                         key={itemId}
@@ -200,7 +216,14 @@ function CartItem() {
                           {quantity} x {item.name.slice(0, 14)}
                         </p>
                         <p>
-                          ${(quantity * parseFloat(item.current_price && item.current_price[0]?.NGN[0])).toFixed(2)}
+                          $
+                          {(
+                            quantity *
+                            parseFloat(
+                              item.current_price &&
+                                item.current_price[0]?.NGN[0]
+                            )
+                          ).toFixed(2)}
                         </p>
                       </div>
                     );
