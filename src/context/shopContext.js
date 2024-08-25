@@ -11,7 +11,7 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = "/api/products";
+      const url = "https://api.timbu.cloud/products";
       const params = new URLSearchParams({
         organization_id: "c569c6cec7a4417fbe55088fa5c20077",
         reverse_sort: "false",
